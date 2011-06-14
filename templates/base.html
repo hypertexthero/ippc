@@ -1,0 +1,38 @@
+<html>
+<head>
+
+    <title>{% block headtitle %}{% endblock %}dev.ippc.int</title>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/ippc.css" type="text/css" media="screen" title="default" charset="utf-8" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/code.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="Shortcut Icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+
+    <p class="breadcrumbs">
+        <strong><a href="/">dev.ippc.int</a></strong> {% block breadcrumbs %}{% endblock %}
+    </p>
+
+    {% block content %}
+
+    <h4>Flatpages</h4>
+
+    {# Loading flatpages for displaying a flatpage list http://docs.djangoproject.com/en/dev/topics/templates/#loading-custom-template-libraries #}
+    {% load flatpages %}
+    {% get_flatpages as flatpages %}
+    <ul>
+        {% for page in flatpages %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+
+    {% block footer %}
+    <p id="footer">
+        This has been <a href="http://hypertexthero.com" title="Hypertexthero.com">Simon Griffee</a>, experimenting with Django.<br />
+        It is currently {% now "H:i T" %} on the {% now "jS" %} of {% now "F Y" %}.
+    </p>
+    {% endblock %}
+</body>
+</html>
