@@ -2,7 +2,7 @@
 
 My Django app for IPPC. Currently barebones setup with built-in flatpages app activated with support for Markdown and code syntax highlighting.
 
-# TODO:
+## TODO:
 
 Create models for:
 
