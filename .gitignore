@@ -13,7 +13,7 @@ init.sh
 # No files with passwords/etc
 htusers
 
-# No media, uploads or static/admin symbolic links
+# No media, uploads or static/admin symbolic link (static files such as CSS, site design images and JS SHOULD go into version control)
 media/
 uploads/
 static/admin

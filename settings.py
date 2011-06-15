@@ -33,6 +33,9 @@ STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 MEDIA_ROOT = os.path.join(DIRNAME, 'media')
+# https://docs.djangoproject.com/en/1.3/howto/static-files/#deploying-static-files-in-a-nutshell
+# https://docs.djangoproject.com/en/1.3/howto/static-files/#staticfiles-production
+# on production remote server: ln -s ~/home/myusername/django_projects/ippc/ippc/static/static /pathto/static/dir/as/defined/by/apache/httpd-vhosts.conf
 STATIC_ROOT = os.path.join(DIRNAME, 'static')
 TEMPLATE_DIRS = os.path.join(DIRNAME, 'templates')
 
