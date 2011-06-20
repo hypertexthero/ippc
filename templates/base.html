@@ -14,6 +14,12 @@
         <strong><a href="/">dev.ippc.int</a></strong> {% block breadcrumbs %}{% endblock %}
     </p>
 
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+    {% else %}
+        <p>Welcome, new user. Please <a href="/admin/">log in</a>.</p>
+    {% endif %}
+
     {% block content %}
 
     <h4>Flatpages</h4>
