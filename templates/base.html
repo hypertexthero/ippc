@@ -14,20 +14,20 @@
         <strong><a href="/">dev.ippc.int</a></strong> {% block breadcrumbs %}{% endblock %}
     </p>
 
-    {% if user.is_authenticated %}
-        <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
-    {% else %}
-        <p>Welcome, new user. Please <a href="/admin/">log in</a>.</p>
-    {% endif %}
+    {# {% if user.is_authenticated %} #}
+    {#     <p>Welcome, {{ user.username }}. Thanks for logging in.</p> #}
+    {# {% else %} #}
+    {#     <p>Welcome, new user. Please <a href="/admin/">log in</a>.</p> #}
+    {# {% endif %} #}
 
     {% block content %}
 
     <h4>Flatpages</h4>
 
-    {# Loading flatpages for displaying a flatpage list http://docs.djangoproject.com/en/dev/topics/templates/#loading-custom-template-libraries #}
-    {% load flatpages %}
-    {% get_flatpages as flatpages %}
     <ul>
+        {# Loading flatpages for displaying a flatpage list http://docs.djangoproject.com/en/dev/topics/templates/#loading-custom-template-libraries #}
+        {% load flatpages %}
+        {% get_flatpages as flatpages %}
         {% for page in flatpages %}
         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
         {% endfor %}

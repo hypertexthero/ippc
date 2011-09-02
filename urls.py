@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'myproject.views.home', name='home'),
     # url(r'^myproject/', include('myproject.foo.urls')),
+    url(r'^accounts/', include('registration.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     # Uncomment the next line to enable the admin:
@@ -15,7 +16,7 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('django.views.generic.simple',
-    (r'^$', 'direct_to_template', {'template': 'base.html'}),
+    url(r'^$', 'direct_to_template', {'template': 'base.html'}),
     # (r'^foo/(?P<id>\d+)/$', 'direct_to_template', {'template': 'foo_detail.html'}),
 )
 
